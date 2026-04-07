@@ -1,20 +1,35 @@
-# Symplichain Hackathon Submission
+# Symplichain Software Engineering Intern Hackathon
 
-This repository contains the CI/CD pipeline configuration and architectural submission for the Symplichain Software Engineering Intern Hackathon.
+Welcome to the repository for my Symplichain Software Engineering Intern Hackathon submission. This repository contains solutions for the Hackathon's architecture, design, and DevOps challenges.
 
 ## Repository Contents
 
-*   `Symplichain_Hackathon_Submission.md`: The complete markdown document answering Parts 1, 2, and 4 (including detailed architectural reasoning and debugging plans). You can export this to a PDF for submission.
-*   `.github/workflows/staging-deploy.yml`: The CI/CD pipeline for the staging environment (Part 3).
-*   `.github/workflows/production-deploy.yml`: The CI/CD pipeline for the production environment (Part 3).
+This repository is structured to seamlessly review the various responses to the Hackathon Challenge:
 
-## Requirements Addressed
+- **`Submission.md`**: The primary document containing detailed answers to all 4 parts of the challenge:
+  - **Part 1:** Shared Gateway Problem (Rate Limiting & Queueing Architecture)
+  - **Part 2:** Mobile Architecture (Interaction model and Tech Stack rationale)
+  - **Part 3:** CI/CD and Deployment Pipeline explanations.
+  - **Part 4:** Debugging (A step-by-step mitigation and methodology).
 
-1.  **Shared Gateway Problem:** Custom queue structures using Redis and Celery. Token Bucket rate limiting. Fair Round-Robin processing execution.
-2.  **Mobile Architecture:** Mobile-optimized interaction leveraging voice input (SymAI) and large gestures to reduce operating friction. Constructed using cross-platform UI tooling (React Native).
-3.  **CI/CD Pipeline:** Fully configured push-to-deploy Github Actions mapping code branches to discrete Staging/Production environments using AWS credentials.
-4.  **Monday Outage Debugging:** Logical data-path tracing from NGINX error logs -> Celery Flower inspection -> AWS CloudWatch metrics for Bedrock -> Postgres RDS connections.
+- **`.github/workflows/`**: Contains the GitHub Actions YAML files for deploying to Staging and Production.
+  - `deploy-staging.yml`
+  - `deploy-prod.yml`
 
-## Submission Output
+- **`Dockerfile` & `docker-compose.yml`**: Supplementary containerization for the Django backend to enhance the deployment architecture and standardizing local developer environments.
 
-Please export the `Symplichain_Hackathon_Submission.md` to a PDF, attach the video recording link inside it, and submit the final file. You can simply push this structure to a public Github Repo to satisfy the repository requirement.
+- **`terraform/`**: Includes `main.tf` and `variables.tf` files with basic Infrastructure as Code (IaC) to migrate away from semi-manual AWS deployments towards a repeatable and robust setup.
+
+## How to Review
+
+1. Read the **`Submission.md`** for the comprehensive written architecture explanations and debugging reasoning.
+2. Review the **`.github/workflows`** folder for the CI/CD pipeline implementations.
+3. Review the **`Dockerfile`** and **`terraform/`** folder for the bonus Docker and IaC implementations.
+
+## How to use `Submission.md`
+
+For the final submission format required by the challenge prompt ("Submit a single PDF document..."):
+- You can compile `Submission.md` into a PDF by using a VSCode Plugin (like `Markdown PDF`), right-clicking the document and selecting 'Export to PDF'. 
+- Alternatively, you can open `Submission.md` in your browser (using an online Markdown renderer) or GitHub, and simply use the "Print to PDF" functionality.
+
+Thank you for reviewing my Hackathon Submission!
